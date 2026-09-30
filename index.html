@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Pokémon Card Explorer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <main class="app-shell">
+
+    <!-- Header -->
+    <header class="top-card">
+      <div>
+        <div class="eyebrow">API HOMEWORK · POKÉDEX LAB</div>
+
+        <h1>Pokemon Card Explorer</h1>
+
+        <p>
+          Search the PokéAPI, inspect the response, and turn structured data
+          into a<br class="desktop-break" />
+          trading-card-style interface.
+        </p>
+      </div>
+
+      <a
+        class="api-badge"
+        href="https://pokeapi.co/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <span></span>
+        POKEAPI
+      </a>
+    </header>
+
+
+    <!-- Search -->
+    <section class="search-card">
+
+      <div class="search-heading-row">
+
+        <div>
+          <div class="section-label">LIVE SEARCH</div>
+
+          <label for="pokemonInput">
+            Find a Pokémon
+          </label>
+        </div>
+
+        <code>GET /api/v2/pokemon/{name}</code>
+
+      </div>
+
+
+      <form id="searchForm" class="search-form">
+
+        <div class="input-wrap">
+
+          <input
+            id="pokemonInput"
+            name="pokemon"
+            type="text"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="pikachu"
+            aria-label="Pokémon name"
+          />
+
+          <button
+            type="button"
+            id="clearButton"
+            class="clear-button"
+            aria-label="Clear search"
+          >
+            ×
+          </button>
+
+        </div>
+
+
+        <button type="submit" class="search-button">
+          Search
+          <span>→</span>
+        </button>
+
+      </form>
+
+
+      <div class="quick-search">
+
+        <span>Quick search:</span>
+
+        <button type="button" data-pokemon="pikachu">
+          Pikachu
+        </button>
+
+        <button type="button" data-pokemon="charizard">
+          Charizard
+        </button>
+
+        <button type="button" data-pokemon="bulbasaur">
+          Bulbasaur
+        </button>
+
+        <button type="button" data-pokemon="mewtwo">
+          Mewtwo
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- Status -->
+    <div
+      id="statusLine"
+      class="status-line"
+      aria-live="polite"
+    >
+      Loaded Pikachu successfully.
+    </div>
+
+
+    <!-- Pokémon Card -->
+    <section
+      id="result"
+      class="pokemon-card"
+      aria-live="polite"
+    ></section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+      <span>
+        Built for API Masterclass homework
+      </span>
+
+      <a
+        href="https://pokeapi.co/docs/v2"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Read the PokéAPI docs ↗
+      </a>
+
+    </footer>
+
+  </main>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
